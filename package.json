@@ -1,0 +1,35 @@
+{
+  "name": "@journey-to-code/open-object-pick-omit",
+  "version": "1.0.0",
+  "description": "Dependency-free object pick and omit utilities preserving own enumerable properties.",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "object",
+    "pick",
+    "omit",
+    "utility"
+  ],
+  "license": "MIT",
+  "sideEffects": false
+}

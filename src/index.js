@@ -1,0 +1,4 @@
+function assertObject(value){ if(value===null || typeof value!=="object" || Array.isArray(value)) throw new TypeError("Expected object to be a non-null object"); }
+function assertKeys(keys){ if(!Array.isArray(keys) || !keys.every(k=>typeof k==="string" || typeof k==="symbol")) throw new TypeError("Expected keys to be an array of property keys"); }
+export function pick(object, keys){ assertObject(object);assertKeys(keys);const out={};for(const key of keys)if(Object.prototype.propertyIsEnumerable.call(object,key))out[key]=object[key];return out; }
+export function omit(object, keys){ assertObject(object);assertKeys(keys);const excluded=new Set(keys);const out={};for(const key of Reflect.ownKeys(object))if(Object.prototype.propertyIsEnumerable.call(object,key)&&!excluded.has(key))out[key]=object[key];return out; }
